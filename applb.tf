@@ -1,6 +1,6 @@
 # Create a Load Balancer
 resource "aws_lb" "external" {
-  name               = "swiggy-lb"
+  name               = "swiggy-lbb"
   internal           = false
   load_balancer_type = "application"
   security_groups    = [aws_security_group.swiggy-alb-sg-1.id]
@@ -11,7 +11,7 @@ resource "aws_lb" "external" {
 
 # Create a Target Group
 resource "aws_lb_target_group" "external-elb" {
-  name     = "external-tg"
+  name     = "external-tg-1"
   port     = 80
   protocol = "HTTP"
   vpc_id   = aws_vpc.swiggy-vpc.id
