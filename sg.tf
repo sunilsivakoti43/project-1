@@ -1,6 +1,6 @@
 # Security Group for ASG
 resource "aws_security_group" "swiggy-ec2-asg-sg" {
-  name        = "swiggy-ec2-asg-sg"
+  name        = "swiggy-ec2-asg-sg1"
   description = "Security group for EC2 instances in ASG"
   vpc_id      = aws_vpc.swiggy-vpc.id
 
@@ -33,14 +33,14 @@ resource "aws_security_group" "swiggy-ec2-asg-sg" {
   }
 
   tags = {
-    Name = "swiggy-ec2-asg-sg"
+    Name = "swiggy-ec2-asg-sg1"
   }
 }
 
 
 # Security Group for Database
 resource "aws_security_group" "swiggy-db-sg" {
-  name        = "swiggy-db-sg"
+  name        = "swiggy-db-sg2"
   description = "Security group for Swiggy Database"
   vpc_id      = aws_vpc.swiggy-vpc.id
 
@@ -65,13 +65,13 @@ resource "aws_security_group" "swiggy-db-sg" {
   }
 
   tags = {
-    Name = "Swiggy DB SG"
+    Name = "Swiggy DB SG2"
   }
 }
 
 # Security Group for Application Load Balancer
 resource "aws_security_group" "swiggy-alb-sg-1" {
-  name        = "swiggy-alb-sg-1"
+  name        = "swiggy-alb-sg-3"
   description = "Security group for Swiggy Application Load Balancer"
   vpc_id      = aws_vpc.swiggy-vpc.id
 
@@ -110,7 +110,7 @@ resource "aws_security_group" "swiggy-alb-sg-1" {
 
 # Create a Security Group for ASG
 resource "aws_security_group" "swiggy-ec2-asg-sg-app" {
-  name        = "swiggy-ec2-asg-sg-app"
+  name        = "swiggy-ec2-asg-sg-app4"
   description = "Security group for Swiggy EC2 instances in ASG"
   vpc_id      = aws_vpc.swiggy-vpc.id
 
@@ -136,6 +136,6 @@ resource "aws_security_group" "swiggy-ec2-asg-sg-app" {
   }
 
   tags = {
-    Name = "swiggy-ec2-asg-sg-app"
+    Name = "swiggy-ec2-asg-sg-app4"
   }
 }
